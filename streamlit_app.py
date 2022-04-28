@@ -18,7 +18,8 @@ my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.co
 
 #create dropdown list
 my_fruit_list = my_fruit_list.set_index('Fruit')
-fruitsToShow = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ['Avacado','Strawberries'])
+fruitsSelected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ['Avacado','Strawberries'])
+fruitsToShow = my_fruit_list.loc[fruitsSelected]
 
 #display table
 streamlit.dataframe(fruitsToShow)
