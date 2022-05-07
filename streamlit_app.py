@@ -45,7 +45,7 @@ myCnx = snowflake.connector(**streamlit.secrets["Snowflake"])
 
 myCur = myCnx.cursor()
 
-myCur.execute("SELECT CURRENT_USER(), current_account(), current_region()"")
+myCur.execute("SELECT CURRENT_USER(), current_account(), current_region()")
 
 myDataRow = myCur.fetchone()
 
