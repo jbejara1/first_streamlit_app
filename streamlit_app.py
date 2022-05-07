@@ -30,7 +30,7 @@ fruitChoice = streamlit.text_input('What fruit would you like info about?','Kiwi
 streamlit.write('The user entered',fruitChoice)
 
 import requests
-fruitJuiceResponse = requests.get("https://fruityvice.com/api/fruit/watermelon")
+fruitJuiceResponse = requests.get("https://fruityvice.com/api/fruit/"+fruitChoice)
 streamlit.text(fruitJuiceResponse.json()) #writes to the screen
 
 #normalize - make table 
