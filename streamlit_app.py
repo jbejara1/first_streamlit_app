@@ -60,7 +60,7 @@ if streamlit.button('Get fruit list'):
   dataRows = getFruitList()
   streamlit.dataframe(dataRows)
   
- def addToList(newFruit):
+def addToList(newFruit):
   with my_cur.cursor() as my_cur:
     my_cur.execute("insert into fruit_load_list values ('from streamlit')")
     return "Thanks for adding " + newFruit
